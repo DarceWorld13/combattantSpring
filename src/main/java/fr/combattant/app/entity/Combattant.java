@@ -1,21 +1,21 @@
-package fr.combattant.app;
+package fr.combattant.app.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Combattant")
+@Table(name="combattant")
 public class Combattant {
 	@Id
 	private int id; 
 	@Column(name = "name")
 	private String name; 
-	@Column(name = "jiu-jitsu")
+	@Column(name = "jiujitsu")
 	private int bjj; 
-	@Column(name = "boxing")
+	@Column(name = "boxin")
 	private int boxing; 
-	@Column(name = "wrestling")
+	@Column(name = "wrestlin")
 	private int wrestling;
 	
 	public Combattant() {

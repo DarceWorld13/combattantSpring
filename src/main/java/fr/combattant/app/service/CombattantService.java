@@ -1,13 +1,18 @@
-package fr.combattant.app;
+package fr.combattant.app.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.combattant.app.entity.Combattant;
+import fr.combattant.app.repository.CombattantRepo;
+
 @Service
 public class CombattantService {
-
+	
+	
+	@Autowired
 	CombattantRepo pRepo;
 
 	//on génère des getters et des setters pour notre pRepo; 
@@ -30,10 +35,18 @@ public class CombattantService {
 	
 	public List<Combattant> findByName(String nameToFind) {
 		
-		List<Combattant> listeDeCombattant = pRepo.trouverParNom(nameToFind);
+		List<Combattant> listeDeCombattant = pRepo.findAll();
 		
 		return listeDeCombattant;
 			
+	}
+	
+	public Combattant createFighter(Combattant fighter) {
+		
+		pRepo.save(fighter);
+		
+		return fighter;
+		
 	}
 	
 	

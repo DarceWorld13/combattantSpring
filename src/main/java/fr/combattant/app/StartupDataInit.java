@@ -5,6 +5,9 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import fr.combattant.app.entity.Combattant;
+import fr.combattant.app.repository.CombattantRepo;
+
 @Component
 public class StartupDataInit {
 
@@ -17,7 +20,7 @@ public class StartupDataInit {
 		 
 		 Combattant mcgregor = new Combattant(); 
 		 mcgregor.setId(1);
-		 mcgregor.setName("Conor Mcgregor");
+		 mcgregor.setName("Conor");
 		 mcgregor.setBjj(10);
 		 mcgregor.setBoxing(30);
 		 mcgregor.setWrestling(15);
